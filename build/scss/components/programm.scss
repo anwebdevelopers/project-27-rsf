@@ -1,0 +1,346 @@
+.programm {
+	@extend .section;
+}
+.programm__wrapper {
+	@extend .container;
+}
+
+.programm__box {
+	@extend .clearfix;
+	position: relative;
+	margin: 60px 0 0 0;
+	padding: 0 0 60px 0;
+	overflow: hidden;
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 80px;
+		width: 100%;
+		box-shadow: inset 0 -80px 70px 0 #fff;
+	}
+}
+
+.programm__tab-buttons {
+	float: left;
+	width: 300px;
+	padding: 0 0 30px 0;
+}
+.programm__tab-button-item {
+	display: block;
+	padding: 0;
+	margin: 0 0 60px 0;
+	outline: none;
+	background-color: transparent;
+	border: none;
+	text-align: left;
+	color: $tc;
+	&:hover, &:focus, &:active {
+		color: $main-color;
+	}
+}
+.programm__tab-button-item.active {
+	.programm__tab-button-title,
+	.programm__tab-button-date {
+		span {
+			border-bottom: 2px solid $main-color;
+		}
+	}
+}
+.programm__tab-button-title {
+	display: block;
+	font-size: 18px;
+	text-transform: uppercase;
+	font-weight: 600;
+	span {
+		border-bottom: 2px solid transparent;
+		transition: all .8s ease;
+	}
+}
+.programm__tab-button-date {
+	margin: 5px 0 0 0;
+	font-size: 14px;
+	span {
+		border-bottom: 2px solid transparent;
+		transition: all .8s ease;
+	}
+}
+.programm__tab-container {
+	margin: 0 0 0 300px;
+}
+.programm__tab-section {
+	display: none;
+	border-left: 2px dotted #ccc;
+	padding: 0 0 40px 0;
+}
+.programm__tab-section.active {
+	display: block;
+}
+.programm__tab-item {
+	margin: 0 0 40px 0;
+	padding: 0 0 0 10%;
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		left: -6px;
+		top: 0;
+		width: 10px;
+		height: 10px;
+		background-color: $main-color;
+		border-radius: 50%;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		left: 2%;
+		top: 4px;
+		width: 5%;
+		height: 1px;
+		background-color: #ccc;
+	}
+}
+.programm__tab-item-date {
+	position: relative;
+	float: left;
+	width: 115px;
+	padding: 0 0 0 20px;
+	font-size: 12px;
+	&:before {
+		content: '\e805';
+		position: absolute;
+		left: 0;
+		top: 1px;
+		color: $main-color;
+		font-size: 14px;
+		line-height: 1;
+		font-family: "fontello";
+		font-style: normal;
+		font-weight: normal;
+		speak: none;
+		text-decoration: inherit;
+		text-align: center;
+		font-variant: normal;
+		text-transform: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+.programm__tab-item-text {
+	position: relative;
+	margin: 0 0 0 135px;
+	padding: 0 0 0 20px;
+	&:before {
+		content: '\f097';
+		position: absolute;
+		left: 1px;
+		top: 2px;
+		transform: rotate(-90deg);
+		color: $main-color;
+		font-size: 14px;
+		line-height: 1;
+		font-family: "fontello";
+		font-style: normal;
+		font-weight: normal;
+		speak: none;
+		text-decoration: inherit;
+		text-align: center;
+		font-variant: normal;
+		text-transform: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+.programm__tab-item-text-small {
+	margin: 0 0 20px 0;
+	font-size: 14px;
+	color: $tc;
+	font-family: Verdana;
+}
+.programm__tab-item-text-big {
+	margin: 0 0 5px 0;
+	font-size: 16px;
+	color: $tc;
+	text-transform: uppercase;
+	//font-family: Verdana;
+	font-weight: 600;
+}
+
+.programm__button-show {
+	position: absolute;
+	left: 304px;
+	bottom: 0;
+	width: 34px;
+	height: 34px;
+	padding: 0;
+	border: 3px solid $main-color;
+	border-radius: 50%;
+	text-align: center;
+	color: $main-color;
+	background-color: transparent;
+	outline: none;
+	transition: all .5s ease;
+	&:hover, &:active {
+		animation-name: social;
+	    animation-duration: .4s;
+	}
+	&:before {
+		content: '\e802';
+		font-family: "fontello";
+	    font-style: normal;
+	    font-weight: normal;
+	    speak: none;
+	    display: inline-block;
+	    text-decoration: inherit;
+	    font-variant: normal;
+  		text-transform: none;
+  		-webkit-font-smoothing: antialiased;
+  		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+.programm__link {
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	bottom: 0;
+	font-size: 16px;
+	font-weight: 600;
+	a {
+		position: relative;
+		text-decoration: none;
+		color: $tc;
+		transition: all .8s ease;
+		border-bottom: 2px solid transparent;
+		i {
+			position: absolute;
+			right: -70px;
+			top: 0;
+			font-size: 32px;
+			transition: all .8s ease;
+		}
+		&:hover, &:focus, &:active {
+			border-color: $main-color;
+			i {
+				color: $main-color;
+			}
+		}
+	}
+}
+
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	
+}
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	.programm__tab-buttons {
+	    width: 200px;
+	}
+	.programm__tab-container {
+	    margin: 0 0 0 200px;
+	}
+	.programm__link {
+	    position: relative;
+	    margin: 0 0 50px 0;
+	    left: auto;
+	    bottom: auto;
+	}
+	.programm__button-show {
+	    left: 204px;
+	}
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	.programm__tab-buttons {
+	    float: none;
+	    width: auto;
+	    padding: 0;
+	    font-size: 0;
+	}
+	.programm__tab-button-item {
+		display: inline-block;
+		vertical-align: top;
+		width: 33.3%;
+		padding: 0 20px 20px 0;
+		margin: 0;
+		//text-align: center;
+	}
+	.programm__tab-container {
+		margin: 30px 0 0 0;
+	}
+	.programm__tab-item:before {
+    	left: -2px;
+    }
+    .programm__button-show {
+	    left: 10px;
+	    bottom: 40px;
+	}
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 640px) {
+	
+	.programm__tab-button-title {
+		font-size: 16px;
+	}
+	.programm__tab-button-date {
+	    font-size: 12px;
+	}
+	
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+	.programm__box {
+	    margin: 40px 0 0;
+	}
+	.programm__tab-button-item {
+		width: 50%;
+	}
+	.programm__tab-button-title {
+		font-size: 14px;
+	}
+	.programm__tab-button-date {
+	    font-size: 10px;
+	}
+	.programm__tab-section {
+	    border: none;
+	}
+	.programm__tab-item {
+		margin: 0 0 30px 0;
+	    padding: 0;
+	    border-bottom: 2px dotted #ccc;
+	    &:before, &:after {
+	    	display: none;
+	    }
+	}
+	.programm__tab-item-date {
+	    float: none;
+	    width: auto;
+	    padding: 0 0 0 20px;
+	}
+	.programm__tab-item-text {
+	    margin: 20px 0 0 0;
+	}
+	.programm__tab-item-text-big {
+    	margin: 0 0 20px;
+    }
+    .programm__button-show {
+	    left: 50%;
+	    bottom: 10px;
+	    margin-left: -17px;
+	}
+}
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+	/**/
+}

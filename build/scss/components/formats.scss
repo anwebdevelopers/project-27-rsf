@@ -1,0 +1,134 @@
+.formats {
+	@extend .section;
+	background-image: url(../img/bg-formats.jpg);
+	background-position: center 0;
+	//background-size: contain;
+	background-repeat: repeat-y;
+}
+.formats__wrapper {
+	@extend .container;
+}
+
+.formats__box {
+	width: 40%;
+	margin: 60px 0 0 0;
+	padding: 0 0 0 70px;
+}
+.formats__item {
+	position: relative;
+	margin: 0 0 60px 0;
+	&:before {
+		content: '';
+		position: absolute;
+		left: -55px;
+		top: 50px;
+		border-left: 2px dotted #ccc;
+		height: 100%;
+	}
+}
+.formats__item:last-child {
+	&:before {
+		display: none;
+	}
+}
+.formats__item-icon {
+	position: absolute;
+	left: -70px;
+	top: 0;
+	i {
+		background: url(../img/sprites.png) no-repeat;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.icon1-formats {
+		background-position: -7px 0;
+		width: 30px;
+		height: 45px;
+	}
+	.icon2-formats{
+		background-position: -2px -55px ;
+		width: 42px;
+		height: 35px;
+	}
+	.icon3-formats{
+		background-position: 0 -108px ;
+		width: 45px;
+		height: 29px;
+	}
+
+	.icon4-formats{
+		background-position: -4px -158px ;
+		width: 39px;
+		height: 30px;
+	}
+}
+
+.formats__item-title {
+	color: $tc;
+	h3 {
+		margin: 0;
+		font-size: 18px;
+		text-transform: uppercase;
+	}
+}
+.formats__item-text {
+	font-size: 14px;
+	line-height: 1.6;
+	font-family: Verdana;
+}
+
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	
+}
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	.formats__box {
+		width: 60%;
+		
+	}
+
+	.formats__item-text {
+		color: darken($fc, 20%);
+	}
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 640px) {
+	.formats__box {
+		width: 80%;
+		
+	}
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+	.formats__box {
+		width: auto;	
+		padding: 0 0 0 50px;
+	}
+	.formats__item {
+		&:before {
+			left: -35px;
+		}
+	}
+	.formats__item-icon {
+		left: -50px;
+	}
+	.formats__item-text {
+	    font-size: 13px;
+	    line-height: 1.4;
+	}
+}
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+	/**/
+}

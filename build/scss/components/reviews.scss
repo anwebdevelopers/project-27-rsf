@@ -1,0 +1,331 @@
+.reviews {
+	position: relative;
+}
+
+.reviews__title {
+	@extend .container;
+	position: relative;
+	z-index: 2;
+	height: 0;
+	bottom: -90px;
+}
+#reviews .reviews__slider {
+	
+	.owl-item {
+		.reviews__slider-bg {
+			filter: blur(10px) saturate(4);
+			transition: all 2s ease;
+		}
+		.reviews__slider-text-box {
+			opacity: .5;
+			transform: translateY(200px);
+			transition: all 1.6s ease;
+			&:before, &:after {
+				top: 0;
+			}
+
+		}
+	}
+	.owl-item:nth-child(3n+2) {
+		.reviews__slider-text-box {
+			transform: translateX(200px);
+		}
+	}
+	.owl-item:nth-child(3n+3) {
+		.reviews__slider-text-box {
+			transform: translateX(-200px);
+		}
+	}
+	.owl-item.active {
+		.reviews__slider-bg {
+			filter: blur(0) saturate(1);
+		}
+		.reviews__slider-text-box {
+			opacity: 1;
+			transform: translate(0);
+			&:before {
+				top: -10px;
+			}
+			&:after {
+				top: -18px;
+			}
+		}
+	}
+	
+	.owl-nav {
+		@extend .container;
+		position: relative;
+		bottom: 80px;
+		height: 0;
+		text-align: right;
+		.owl-next,
+		.owl-prev {
+			display: inline-block;
+			vertical-align: top;
+			width: 27px;
+			height: 27px;
+			line-height: 27px;
+			margin: 0 10px;
+			text-align: center;
+			font-size: 27px;
+			color: $main-color;
+			transition: all .8s ease;
+			border-radius: 50%;
+			&:before {
+				font-family: "fontello";
+				font-style: normal;
+				font-weight: normal;
+				speak: none;
+				text-decoration: inherit;
+				text-align: center;
+				font-variant: normal;
+				text-transform: none;
+				-webkit-font-smoothing: antialiased;
+  				-moz-osx-font-smoothing: grayscale;
+			}
+			&:hover, &:active {
+				color: $accent-color;
+				transform: scale(1.2);
+			}
+		}
+		.owl-next {
+			margin-right: 33%;
+			&:before {
+				content: '\e803'
+			}
+		}
+		.owl-prev {
+			&:before {
+				content: '\e804'
+			}
+		}
+	}
+}
+.reviews__slider-wrapper {
+	@extend .container;
+	position: static;
+}
+.reviews__slider-item {
+	position: relative;
+	padding: 220px 0 0 0;
+	overflow: hidden;
+}
+.reviews__slider-bg {
+	position: absolute;
+	z-index: -1;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	top: 0;
+	background-color: #0147a5;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center 0;
+	animation-name: scale;
+    animation-duration: 26s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.25,0,.75,1);
+}
+
+.reviews__slider-text-box {
+	position: relative;
+	margin: 0 25% 0 0;
+	padding: 70px 10% 100px 5%;
+	background-color: #fff;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	&:before {
+		content: '';
+		position: absolute;
+		z-index: 0;
+		right: 10px;
+		left: 10px;
+		top: -10px;
+		height: 30px;
+		background-color: #fff;
+		opacity: .5;
+		border-top-right-radius: 10px;
+		border-top-left-radius: 10px;
+		transition: all 1.8s ease;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		z-index: 0;
+		right: 20px;
+		left: 20px;
+		top: -18px;
+		height: 30px;
+		background-color: #fff;
+		opacity: .5;
+		border-top-right-radius: 10px;
+		border-top-left-radius: 10px;
+		transition: all 2.2s ease;
+	}
+}
+#reviews .reviews__slider-img {
+	float: left;
+	max-width: 150px;
+	
+	img {
+		display: block;
+		max-width: 100%;
+		width: auto;
+		height: auto;
+		border-radius: 50%;
+	}
+}
+.reviews__slider-name {
+	color: $tc;
+	text-transform: uppercase;
+	margin: 0 0 0 190px;
+	h3 {
+		margin: 0;
+		font-size: 18px;
+		line-height: 1.3;
+	}
+}
+.reviews__slider-position {
+	margin: 15px 0 0 190px;
+	font-size: 16px;
+	color: #728898;
+	font-weight: 600;
+	line-height: 1.6;
+}
+.reviews__slider-text {
+	position: relative;
+	margin: 40px 0 0 190px;
+	font-size: 15px;
+	line-height: 1.8;
+	font-family: Verdana;
+	p:first-child {
+		position: relative;
+		&:before {
+			content: '«';
+			position: absolute;
+			left: -20px;
+			top: 2px;
+			color: $main-color;
+			font-size: 22px;
+			line-height: 1;
+		}
+	}
+	p:last-child {
+		&:after {
+			content: '»';
+			display: inline-block;
+			vertical-align: middle;
+			margin-left: 10px;
+			color: $main-color;
+			font-size: 22px;
+			line-height: 1;
+		}
+	}
+}
+
+.reviews__slider-numeral {
+	position: absolute;
+	top: 60px;
+	right: 20px;
+	transform-origin:bottom left;
+	transform: rotate(90deg);
+	font-size: 16px;
+	font-weight: 600;
+	span {
+		margin-right: 3px;
+	}
+	span:first-child {
+		&:after {
+			content: '/';
+			margin-left: 8px;
+		}
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		right: -110px;
+		top: 50%;
+		width: 100px;
+		height: 1px;
+		background-color: $main-color;
+	}
+}
+
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	
+}
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	.reviews__slider-item {
+	    padding: 300px 0 0;
+	}
+	.reviews__slider-bg {
+	    bottom: auto;
+	    height: 340px;
+	}
+	.reviews__slider-text-box {
+		margin: 0;
+	    padding: 70px 10% 100px 5%;
+	}
+	#reviews .reviews__slider .owl-nav {
+	    text-align: center;
+	    .owl-next {
+		   	margin-right: 0;
+		}
+	}
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 640px) {
+	.reviews__slider-item {
+	    padding: 250px 0 0;
+	}
+	.reviews__slider-bg {
+	    bottom: auto;
+	    height: 290px;
+	}
+	.reviews__slider-text-box {
+	    padding: 40px 40px 100px 20px;
+	}
+	#reviews .reviews__slider-img {
+	    float: none;
+	}
+	.reviews__slider-name {
+	    margin: 40px 0 0 0;
+	}
+	.reviews__slider-position {
+    	margin: 15px 0 0 0;
+    }
+    .reviews__slider-text {
+	    margin: 40px 0 0 0;
+	}
+	.reviews__slider-numeral {
+	    top: 30px;
+	    right: 0;
+	}
+}
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+	.reviews__slider-position {
+    	line-height: 1.4;
+    	font-size: 15px;
+    }
+	.reviews__slider-text {
+	    margin: 30px 0 0 0;
+	    font-size: 13px;
+	    line-height: 1.4;
+	}
+}
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+	/**/
+}

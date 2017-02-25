@@ -1,0 +1,149 @@
+.result {
+	@extend .section;
+	background-image: url(../img/bg-result.png);
+	background-repeat: no-repeat;
+	background-position: center 0;
+}
+.result__wrapper {
+	@extend .container;
+
+}
+
+.result__box {
+	@extend .clearfix;
+	margin: 70px 0 0 0;
+}
+
+.result__item {
+	float: left;
+	width: 50%;
+	margin: 0 0 60px 0;
+}
+.result__item:nth-child(1) {
+	width: 40%;
+	.result__item-title {
+		&:before {
+			top: 10px;
+			right: -35px;
+		}
+	}
+}
+.result__item:nth-child(2) {
+	margin-left: 10%;
+	margin-top: -40px;
+	.result__item-title {
+		&:before {
+			top: 0;
+			left: -40px;
+		}
+	}
+}
+.result__item:nth-child(3) {
+	.result__item-title {
+		&:before {
+			top: -40px;
+			left: 0;
+		}
+	}
+}
+
+.result__item-title {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	color: $tc;
+	h3 {
+		margin: 0;
+		font-size: 18px;
+		text-transform: uppercase;
+		font-weight: 600;
+	}
+	&:before {
+		content: '+';
+		position: absolute;
+		width: 25px;
+		height: 25px;
+		line-height: 20px;
+		border-radius: 50%;
+		border: 2px solid #ccc;
+		text-align: center;
+		color: $main-color;
+		font-size: 24px;
+		font-weight: 600;
+
+	}
+}
+
+.result__item-list {
+	margin: 20px 0 0 0;
+	font-size: 15px;
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		li {
+			position: relative;
+			margin: 10px 0 0 0;
+			&:before {
+				content: '';
+				position: absolute;
+				left: -12px;
+				top: 8px;
+				width: 4px;
+				height: 4px;
+				border-radius: 50%;
+				background-color: #ccc;
+			}
+		}
+	}
+}
+
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	
+}
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	.result__item:nth-child(1),
+	.result__item:nth-child(2),
+	.result__item:nth-child(3) {
+		float: none;
+		width: auto;
+		padding: 0 0 0 40px;
+		margin: 0 0 40px 0;
+		.result__item-title {
+			&:before {
+				top: 0;
+				left: -40px;
+			}
+		}
+	}
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+	.result__box {
+	    margin: 60px 0 0;
+	}
+	.result__item-list {
+		font-size: 13px;
+		line-height: 1.3;
+		ul {
+			li {
+				margin: 5px 0 0 0;
+			}
+		}
+	}
+}
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+	/**/
+}

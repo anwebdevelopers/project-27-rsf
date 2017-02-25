@@ -1,0 +1,91 @@
+.report {
+	@extend .section;
+	background-color: #0147a5;
+	background-image: url(../img/bg-report.jpg);
+	background-size: cover;
+	background-position: center 0;
+}
+.report__wrapper {
+	@extend .container;
+}
+
+.report__box {
+	@extend .clearfix;
+}
+.report__link {
+	float: right;
+	width: 47%;
+	margin-top: -80px;
+	text-align: center;
+	a {
+
+		display: inline-block;
+		vertical-align: top;
+		max-width: 200px;
+		padding: 6% 5% 6% 7%;
+		text-decoration: none;
+		color: transparent;
+		border: 8px solid #fff;
+		text-align: center;
+		border-radius: 50%;
+		transition: all .8s ease;
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+		&:hover, &:focus, &:active {
+			border-color: lighten($main-color, 30%);
+			box-shadow: inset 0 0 50px 6px $main-color;		
+		}
+	}
+}
+.report__text {
+	margin: 60px 53% 0 0;
+	font-size: 14px;
+	color: #fff;
+	line-height: 1.8;
+	font-family: Verdana;
+}
+
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	.report__link {
+		margin-top: 0;
+	}
+}
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 640px) {
+	.report__link {
+	    float: none;
+	    width: auto;
+	    margin: 40px 0 0 0;
+	}
+	.report__text {
+	    margin: 40px 0 0 0;
+	}
+}
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+	.report__text {
+	    font-size: 13px;
+	    line-height: 1.6;
+	}
+}
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+	/**/
+}

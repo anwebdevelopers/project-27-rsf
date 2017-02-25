@@ -1,0 +1,28 @@
+.icon-formats3, .icon-formats4, .icon-formats1, .icon-formats2{
+	background: url(sprites.png) no-repeat;
+}
+
+.icon-formats3{
+	background-position: 0 -108px ;
+	width: 45px;
+	height: 29px;
+}
+
+.icon-formats4{
+	background-position: -4px -158px ;
+	width: 39px;
+	height: 30px;
+}
+
+.icon-formats1{
+	background-position: -7px 0;
+	width: 30px;
+	height: 45px;
+}
+
+.icon-formats2{
+	background-position: -2px -55px ;
+	width: 42px;
+	height: 35px;
+}
+

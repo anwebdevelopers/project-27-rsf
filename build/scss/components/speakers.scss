@@ -1,0 +1,237 @@
+.speakers {
+	@extend .section;
+}
+.speakers__wrapper {
+	@extend .container;
+}
+
+.speakers__box {
+	margin: 60px 0 0 0;
+	font-size: 0;
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+	// transition: max-height 1s ease;
+}
+.speakers__item {
+	display: inline-block;
+	vertical-align: top;
+	width: 25%;
+	padding: 0 15px;
+	margin: 0 0 35px 0;	
+}
+.speakers__block {
+	text-align: center;
+	&:hover, &:active {
+		.speakers__block-img {
+			img {
+				transform: scale(1.1);
+			}
+		}
+		.speakers__block-title {
+			opacity: 0;
+		}
+		.speakers__block-text {
+			opacity: 0;
+		}
+		.speakers__block-link {
+			z-index: 1;
+			opacity: 1;
+		}
+	}
+}
+.speakers__item:nth-child(4n+1) {
+	.speakers__block-img {
+		border-bottom: 2px solid #06b4f2;
+	}
+}
+.speakers__item:nth-child(4n+2) {
+	.speakers__block-img {
+		border-bottom: 2px solid #0d47ca;
+	}
+}
+.speakers__item:nth-child(4n+3) {
+	.speakers__block-img {
+		border-bottom: 2px solid #442acb;
+	}
+}
+.speakers__item:nth-child(4n+4) {
+	.speakers__block-img {
+		border-bottom: 2px solid #a757f2;
+	}
+}
+.speakers__block-img {
+	overflow: hidden;
+	img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+		transition: all .8s ease;
+	}
+}
+.speakers__block-text-box {
+	position: relative;
+}
+.speakers__block-title {
+	margin: 25px 0 0 0;
+	color: $tc;
+	transition: opacity .8s ease;
+	h4 {
+		margin: 0;
+		font-size: 14px;
+		text-transform: uppercase;
+	}
+}
+.speakers__block-text {
+	margin: 15px 20px 0 20px;
+	font-size: 12px;
+	transition: opacity .8s ease;
+	p {
+		margin: 0;
+	}
+}
+.speakers__block-link {
+	position: absolute;
+	z-index: -1;
+	top: 10px;
+	left: 0;
+	right: 0;
+	font-size: 16px;
+	font-weight: 600;
+	opacity: 0;
+	transition: opacity .8s ease;
+	a {
+		padding: 0 0 3px 0;
+		text-decoration: none;
+		color: $tc;
+		border-bottom: 2px dotted $main-color;
+		transition: color .8s ease;
+		&:hover, &:focus, &:active {
+			color: $main-color;
+		}
+	}
+}
+
+.speakers__button {
+	margin: 60px 0 0 0;
+	text-align: center;
+	button, a {
+		margin: 0 40px;
+	}
+}
+button.speakers__button-show {
+	box-shadow: inset 0 0 0 4px $accent-color;
+	&:hover, &:focus, &:active {
+		box-shadow: inset 0 0 0 4px $accent-color,
+					inset 0 0 50px 6px darken($accent-color, 20%);
+	}
+	&:before, &:after {
+		display: none;
+	}
+}
+
+.speakers__popup {
+	@extend .container;
+	padding: 0;
+	border-radius: 20px;
+	overflow: hidden;
+	background-color: #d9dfe4;
+}
+.speakers__popup-img {
+	float: left;
+	padding: 60px 0 0 0;
+	background-color: #eff3f6;
+	img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
+}
+.speakers__popup-text-box {
+	margin: 0 0 0 270px;
+	padding: 60px 6%;
+	background-color: #fff;
+}
+
+.speakers__popup-title {
+	color: $tc;
+	h4 {
+		margin: 0;
+		font-size: 24px;
+		text-transform: uppercase;
+	}
+}
+
+.speakers__popup-position {
+	margin: 25px 0 0 0;
+	font-size: 18px;
+	line-height: 1.2;
+}
+
+.speakers__popup-text {
+	margin: 60px 0 0 0;
+	font-size: 18px;
+	line-height: 1.6;
+}
+
+
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	
+}
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	.speakers__item {
+		width: 33.3%;
+	}
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	.speakers__button {
+		margin: 50px 0 0;
+		a, button {
+			margin: 0 20px 20px 20px;
+		}
+	}
+	.speakers__popup-img {
+	    float: none;
+	    padding: 0;
+	}
+	.speakers__popup-text-box {
+	    margin: 0;
+	    padding: 40px 6%;
+	}
+	.speakers__popup-text {
+	    margin: 30px 0 0;
+	    font-size: 16px;
+	    line-height: 1.4;
+	}
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 640px) {
+	.speakers__item {
+		width: 50%;
+	}
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+	.speakers__item {
+		padding: 0 5px;
+	}
+	.speakers__block-text {
+    	margin: 15px 0 0;
+    }
+    .speakers__popup-text {
+	    font-size: 14px;
+	}
+}
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+	
+}

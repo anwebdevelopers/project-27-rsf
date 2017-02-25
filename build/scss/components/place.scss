@@ -1,0 +1,126 @@
+.place {
+	padding: 90px 0 80px;
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 60%;
+		bottom: 0;
+		background-image: url(../img/bg-place.jpg);
+		background-position: right center;
+		background-size: cover;
+		// background-repeat: repeat-y;
+	}
+}
+.place__mask {
+	left: 0;
+	top: 0;
+	right: 60%;
+	bottom: 0;
+}	
+.place__wrapper {
+	@extend .container;
+}
+
+.place__box {
+	margin: 60px 0 0 0;
+	padding: 0 70% 0 0;
+}
+
+.place__img {
+	img {
+		display: block;
+		max-width: 100%;
+		width: auto;
+		height: auto;
+	}
+}
+.place__name {
+	margin: 40px 0 0 0;
+	color: #fff;
+	h3 {
+		margin: 0;
+		font-size: 16px;
+		text-transform: uppercase;
+	}
+}
+.place__adress {
+	margin: 10px 0 0 0;
+	font-size: 14px;
+	color: #fff;
+}
+.place__map {
+	position: absolute;
+	z-index: 1;
+	left: 40%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+
+
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	
+}
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	.place {
+		&:before {
+			right: 50%;
+		}
+	}
+	.place__mask {
+		right: 50%;
+	}
+	.place__map {
+		left: 50%;	
+	}
+	.place__box {
+	    padding: 0 60% 0 0;
+	}
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 640px) {
+	.place {
+		padding: 90px 0 460px;
+	}
+	.place {
+		&:before {
+			right: 0;
+			bottom: 400px;
+		}
+	}
+	.place__mask {
+		right: 0;
+		bottom: 400px;
+	}
+	.place__box {
+	    padding: 0;
+	}
+	.place__map {
+		left: 0;
+		top: auto;
+		height: 400px;	
+	}
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+	
+}
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+	/**/
+}
